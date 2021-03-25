@@ -1,0 +1,43 @@
+<h1>{{obs | async}}</h1>
+<!--pour m'abonner un observable avec pipe async-->
+
+
+<p [class.long]="(obs | async)% 2 === 1">tester le css conditionnel, mon {{name}} qui fait {{name.length}} octets.</p>
+<hello></hello>
+<!--si je presice pas ,il va etre la valeur par defaut-->
+<hello name="{{ name }}"></hello>
+<!--comme le 3ieme mais mauche way-->
+<hello [name]="name"></hello>
+
+<hello name="{{ name.length>10 }}" (monEvt)="a = $event"></hello>
+<hello [name]="name.length.toString()" (monEvt)="b = $event"></hello>
+
+
+<p>a = {{a}}</p>
+<p>b = {{b}}</p>
+<p>a + b = {{a + b}}</p>
+
+
+
+<p>
+  Start editing to see some magic happen :)
+</p>
+<p>voyons ce qu'il y a dans name : 
+  {{name}} qui fait {{name.length}} octets.
+</p>
+
+<!--double way-->
+<input [(ngModel)]="name"/>
+<!--这个里面的name改了之前的name的值也随着更改-->
+
+<!--simple way-->
+<input [ngModel]="name"/>
+<!--单向更改，可以在输入栏里更改，但是之前的数据不变-->
+
+<!--click-->
+<button (click)="name = 'boing longggggg!!!'">
+  click ici
+</button>
+<!--按下按钮后name的值变为指定值-->
+
+<p [class.long]="name.length>15">tester le css conditionnel, mon {{name}} qui fait {{name.length}} octets.</p>
