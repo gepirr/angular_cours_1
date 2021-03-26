@@ -10,6 +10,8 @@ import { PipoService } from './pipo.service';
   imports:      [ BrowserModule, FormsModule ],
   declarations: [ AppComponent, HelloComponent ],
   bootstrap:    [ AppComponent ],
+  //cad,quel composant va etre racine
   providers: [PipoService]
+  
 })
 export class AppModule { }

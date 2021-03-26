@@ -4,7 +4,8 @@ import { Component, EventEmitter, Input,Output } from '@angular/core';
   selector: 'hello',
   //selecter toute les balise hello
   template: `
-    <h1>Hello MIAGE {{name}}!
+    <h1 *ngIf= "value>50">Hello MIAGE {{name}}!</h1>
+    <h1>
        <input type="range" 
           [(ngModel)]="value"
           (ngModelChange)="update($event)"
